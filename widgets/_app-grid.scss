@@ -20,32 +20,25 @@ $app_icon_size: 96px;
 .app-well-app {
   @include overview_icon($osd_fg_color);
 
-  .overview-icon {
-    padding: $base_padding*2;
-    border-radius: $base_border_radius*3;
-  }
+  .overview-icon { padding: $base_padding*2;}  
   .overview-icon.overview-icon-with-label {
     > StBoxLayout {
       spacing: $base_padding;
     }
-  }
+  }  
+  @if $variant == 'light' { .overview-icon { color: $osd_fg_color;} }
 }
 
 // app folders
 .app-well-app.app-folder {
-  @include overview_icon($fg_color, $flat: false);
+  @include overview_icon($osd_fg_color, $flat: false);
 }
 
 // expanded folder
 .app-folder-dialog {
-  border-radius: $modal_radius*4;
-  background-color: $bg_color;
-  padding: $base_padding*2;
-  box-shadow:inset 0 0 0 1px $outer_borders_color;
-
-  @if $is_highcontrast {
-    box-shadow:inset 0 0 0 2px $hc_inset_color;
-  }
+  border-radius: $modal_radius*2;
+  background-color: $dash_background_color;
+    
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -56,10 +49,7 @@ $app_icon_size: 96px;
       @extend %title_1;
     }
 
-    & .folder-name-entry {
-      width: 12em;
-      border-radius: $base_border_radius*2;
-    }
+    & .folder-name-entry { width: 300px }
 
     /* FIXME: this is to keep the label in sync with the entry */
     & .folder-name-label { padding: 5px 7px; color: $osd_fg_color; }
@@ -86,6 +76,50 @@ $app_icon_size: 96px;
   & .page-indicators {
     margin-bottom: 18px;
   }
+  
+  @if $variant == 'light' {  
+  & .app-well-app {
+  @include overview_icon(transparentize(black, .05));
+
+  .overview-icon { color: $fg_color; padding: $base_padding*2;}
+  .overview-icon.overview-icon-with-label {
+    > StBoxLayout {
+      spacing: $base_padding;
+      }
+    }
+  }
+
+  & .folder-name-container { 
+    & .folder-name-label { padding: 5px 7px; color: $fg_color; }
+    }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+    .page-indicator-icon {
+    background-color: $bubble_buttons_color;
+    }
+  }
+  
+  & .app-well-app-running-dot {
+  background-color: $fg_color;
+  }
+  
+  & .page-navigation-arrow {
+  &  > StIcon {
+    margin: 6px;
+    padding: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: 99px;
+    color: $fg_color;
+  }
+
+  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  }
+
+  }//eol  
 }
 
 .app-folder-dialog-container {
@@ -131,12 +165,9 @@ $app_icon_size: 96px;
 // shutdown and other actions in the grid
 .system-action-icon {
   background-color: rgba(0,0,0,0.8);
-  color: white;
+  color: #fff;
   border-radius: 99px;
   icon-size: $app_icon_size * 0.5;
-  @if $is_highcontrast {
-    box-shadow: inset 0 0 0 2px $hc_inset_color;
-  }
 }
 
 .page-navigation-hint {
@@ -162,16 +193,16 @@ $app_icon_size: 96px;
 }
 
 .page-navigation-arrow {
-  margin: 6px;
-  padding: 18px;
-  width: 24px;
-  height: 24px;
-  border-radius: 99px;
-  @if $is_highcontrast {
-    @include button(normal, $osd_fg_color, transparentize($osd_bg_color, 0.5));
+  &  > StIcon {
+    margin: 6px;
+    padding: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: 99px;
+    color: $osd_fg_color;
   }
 
-  &:insensitive { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:hover { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:active { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
 }

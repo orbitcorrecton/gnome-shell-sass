@@ -33,7 +33,7 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-type-button {
-  @extend %osd_button;
+  @extend %dosd_button;
   min-width: 48px;
   padding: $base_padding * 2 $base_padding * 3 !important;
   border-radius: $screenshot_ui_panel_border_radius - $screenshot_ui_panel_padding;
@@ -96,7 +96,7 @@ $screenshot_ui_button_red: $error_color;
   padding: $base_padding $base_padding*2;
   background-color: transparent;
   &:hover, &:focus { background-color: lighten($osd_bg_color, 10%);}
-  &:active { background-color: lighten($active_bg_color,5%);}
+  &:active { background-color: lighten(lighten(lighten(darken(desaturate(#241f31, 100%), 2%), 5%), 12%),5%);}
   &:checked { background-color: white;color: black;}
   &:insensitive { color: transparentize($osd_fg_color, 0.5);}
 
@@ -106,7 +106,7 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-show-pointer-button {
-  @extend %osd_button;
+  @extend %dosd_button;
   border-radius: 99px;
   padding: $base_padding * 2 !important;
   StIcon { icon-size: $base_icon_size;}

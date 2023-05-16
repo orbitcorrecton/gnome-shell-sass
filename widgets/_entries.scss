@@ -1,10 +1,20 @@
 /* Entries */
 
 StEntry {
-  @extend %entry;
+  border-radius: $base_border_radius;
+  padding: 8px;
+  color: $fg_color;
+
+  @include entry(normal);
+  &:hover { @include entry(hover);}
+  &:focus { @include entry(focus);}
+  &:insensitive { @include entry(insensitive);}
+
+  selection-background-color: $selected_bg_color;
+  selected-color: $selected_fg_color;
 
   StIcon.capslock-warning {
-    icon-size: $base_icon_size;
+    icon-size: 16px;
     warning-color: $warning_color;
     padding: 0 4px;
   }
