@@ -34,7 +34,13 @@ $app_icon_size: 96px;
 
 // app folders
 .app-well-app.app-folder {
-  @include overview_icon($system_fg_color, $flat: false);
+  @if $variant == 'light' {
+    @include overview_icon($system_fg_color, $flat: false);
+  }
+  @else if $variant == 'dark' {
+    background-color: lighten($system_bg_color, 5%);
+    border-radius: $base_border_radius*3;
+  }
 }
 
 // expanded folder
