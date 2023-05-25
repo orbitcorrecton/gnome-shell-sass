@@ -111,7 +111,11 @@
       icon-size: $base_icon_size*1.5; // a non-standard symbolic size but ok
       border-radius: 999px;
       padding: 1.5 * $base_padding;
-      background-color: if($variant == 'light', white, transparentize($fg_color, 0.8));
+      background-color: transparentize($fg_color, 0.8);
+      @if $variant == 'light' {
+      	background-color: white;
+      	border: 1px solid $borders_color;
+      	}
 
       &.active {
         background-color: $selected_bg_color;
