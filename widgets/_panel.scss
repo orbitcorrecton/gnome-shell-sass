@@ -51,6 +51,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
     &.screen-recording-indicator,
     &.screen-sharing-indicator {
+      color: darken(white, 5%);
       StBoxLayout {
         spacing: $base_padding;
       }
