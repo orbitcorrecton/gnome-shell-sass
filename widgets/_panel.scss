@@ -42,16 +42,17 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
 
     &.screen-recording-indicator {
+      color: darken(white, 5%);
       box-shadow: inset 0 0 0 100px $screenshot_ui_button_red;
     }
     &.screen-sharing-indicator {
+      color: darken(white, 5%);
       box-shadow: inset 0 0 0 100px $warning_color;
       StBoxLayout { margin: 0 $base_padding; }
     }
 
     &.screen-recording-indicator,
     &.screen-sharing-indicator {
-      color: darken(white, 5%);
       StBoxLayout {
         spacing: $base_padding;
       }
