@@ -18,7 +18,7 @@ $slider_size: 16px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
   -slider-handle-border-width: 1px;
-  -slider-handle-border-color: $insensitive_borders_color;
+  -slider-handle-border-color: $borders_color;
   color: white;
   height: $slider_size +1px;
 }
