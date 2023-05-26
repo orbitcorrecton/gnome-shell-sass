@@ -65,7 +65,11 @@
 }
 
 .quick-toggle-menu {
-  background-color: $card_bg_color;
+  @include card;
+  
+  background-color: $bg_color !important;
+  color: $fg_color !important;
+  
   border-radius: $base_border_radius*3;
   padding: $base_padding*2;
   margin: $base_padding*2 $base_padding*3 0;
@@ -82,6 +86,10 @@
       border-radius: 999px;
       padding: 1.5 * $base_padding;
       background-color: lighten($bg_color, 10%);
+      @if $variant == 'light' {
+      	background-color: white;
+      	border: 1px solid $borders_color;
+      	}
 
       &.active { color: white; background-color: $selected_bg_color; }
     }
