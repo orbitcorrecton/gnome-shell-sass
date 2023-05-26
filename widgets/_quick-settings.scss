@@ -84,6 +84,7 @@
     & .icon {
       icon-size: $base_icon_size*1.5; // a non-standard symbolic size but ok
       border-radius: 999px;
+      border: 1px solid $borders_color;
       padding: 1.5 * $base_padding;
       background-color: lighten($bg_color, 10%);
       @if $variant == 'light' {
@@ -91,7 +92,7 @@
       	border: 1px solid $borders_color;
       	}
 
-      &.active { color: white; background-color: $selected_bg_color; }
+      &.active { color: white; background-color: $selected_bg_color; border-color: transparent;}
     }
 
     & .title {
