@@ -91,7 +91,7 @@
       	background-color: white;
       	}
 
-      &.active { color: white; background-color: $selected_bg_color; border-color: transparent;}
+      &.active { color: white; background-color: $selected_bg_color; border-color: $selected_bg_color; }
     }
 
     & .title {
