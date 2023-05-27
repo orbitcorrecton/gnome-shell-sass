@@ -90,7 +90,7 @@
       	background-color: $light_1;
       	}
 
-      &.active { color: $light_1; background-color: $selected_bg_color; }
+      &.active { color: $selected_fg_color; background-color: $selected_bg_color; }
     }
 
     & .title {
