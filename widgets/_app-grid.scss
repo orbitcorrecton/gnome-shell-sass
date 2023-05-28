@@ -208,7 +208,7 @@ $app_icon_size: 96px;
     color: $osd_fg_color;
   }
 
-  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_fg_color, 0.5));}
-  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_fg_color, 0.5));}
-  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_fg_color, 0.5));}
+  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_fg_color, 0.9));}
+  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_fg_color, 0.9));}
+  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_fg_color, 0.9));}
 }
