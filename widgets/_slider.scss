@@ -17,8 +17,6 @@ $slider_size: 16px;
   -barlevel-overdrive-separator-width:1px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
-  -slider-handle-border-width: 1px;
-  -slider-handle-border-color: $borders_color;
-  color: white;
-  height: $slider_size +1px;
+  -slider-handle-border-width: 0;
+  -slider-handle-border-color: transparent;
 }
