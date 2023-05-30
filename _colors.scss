@@ -75,13 +75,13 @@ $active_bg_color: if($variant=='light', darken($bg_color, 5%), lighten($bg_color
 $active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));
 
 // checked state
-$checked_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 7%));
-$checked_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 7%));
+$checked_bg_color: if($variant=='light', darken($bg_color, 9%), lighten($bg_color, 7%));
+$checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
 
 // hover state
-$hover_bg_color: if($variant=='light', darken($bg_color,7%), lighten($bg_color, 10%));
-$hover_fg_color: if($variant=='light', darken($fg_color,7%), lighten($fg_color, 10%));
+$hover_bg_color: if($variant=='light', darken($bg_color,5%), lighten($bg_color, 10%));
+$hover_fg_color: if($variant=='light', darken($fg_color,9%), lighten($fg_color, 10%));
 
 // active state
-$active_bg_color: if($variant=='light', darken($bg_color, 9%), lighten($bg_color, 12%));
-$active_fg_color: if($variant=='light', darken($fg_color, 9%), lighten($fg_color, 12%));
+$active_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_color, 12%));
+$active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
