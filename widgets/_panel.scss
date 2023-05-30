@@ -63,7 +63,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
 
     &:active, &:overview, &:focus, &:checked {
-      box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.8);
+      box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.78);
       @if $variant == 'light' { box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.68); }
 
       // The clock display needs to have the background on .clock because
@@ -72,7 +72,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
         box-shadow: none;
 
         .clock {
-          box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.8);
+          box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.78);
           @if $variant == 'light' { box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.68); }
         }
       }
@@ -86,13 +86,13 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
 
     &:hover {
-      box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.85);
-      @if $variant == 'light' { box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.73); }
+      box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.84);
+      @if $variant == 'light' { box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.74); }
       &.clock-display {
         box-shadow: none;
         .clock {
-          box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.85);
-          @if $variant == 'light' { box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.73); }
+          box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.84);
+          @if $variant == 'light' { box-shadow: inset 0 0 0 100px transparentize($panel_fg_color, 0.74); }
         }
       }
 
