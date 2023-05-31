@@ -76,8 +76,7 @@ $submenu_bg_color: lighten($menu_bg_color, 7%);
   }
 
   .popup-menu-ornament {
-    icon-size: $base_icon_size !important;
-    width: $base_icon_size;
+    min-width: $base_icon_size !important;
   }
 
   // submenu specific styles
@@ -104,8 +103,12 @@ $submenu_bg_color: lighten($menu_bg_color, 7%);
 
 // container for radio and check boxes
 .popup-menu-ornament {
-  icon-size: $base_icon_size !important;
-  width: $base_icon_size;
+  @extend %heading;
+  width: 1.2em;
+  text-align: center !important;
+
+  &:ltr { text-align: right;}
+  &:rtl { text-align: left;}
 }
 
 // separator
