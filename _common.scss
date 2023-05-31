@@ -90,6 +90,7 @@ stage {
   &:selected,
   &:active { @include button(active);}
   &:checked { @include button(checked);}
+  &.default { @include button(default);}
 
   &.flat {
     @include button(normal, $flat:true);
@@ -99,6 +100,7 @@ stage {
     &:selected,
     &:active { @include button(active, $flat:true);}
     &:checked { @include button(checked, $flat:true);}
+    &.default { @include button(default, $flat:false);}
   }
 }
 
@@ -117,6 +119,18 @@ stage {
   &:hover { @include entry(hover, $c:$fg_color);}
   &:focus { @include entry(focus, $c:$fg_color);}
   &:insensitive { @include entry(insensitive, $c:$fg_color);}
+
+  StLabel.hint-text {
+    color: transparentize($fg_color, 0.3);
+  }
+}
+
+%lentry {
+  @extend %entry_common;
+  @include entry(normal, $c:$bg_color);
+  &:hover { @include entry(hover, $c:$bg_color);}
+  &:focus { @include entry(focus, $c:$bg_color); color: $fg_color;}
+  &:insensitive { @include entry(insensitive, $c:$bg_color);}
 
   StLabel.hint-text {
     color: transparentize($fg_color, 0.3);

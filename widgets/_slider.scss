@@ -20,4 +20,5 @@ $slider_size: 16px;
   -slider-handle-border-width: 1px;
   -slider-handle-border-color: $borders_color; //transparent; // because 0 width
   color: white;
+  height: $slider_size +1.5px;
 }
