@@ -1,5 +1,5 @@
 $_gdm_bg: $system_bg_color;
-$_gdm_fg: white;
+$_gdm_fg: $system_fg_color;
 $_gdm_dialog_width: 23em;
 
 // common style for gdm and lockscreen
@@ -19,12 +19,13 @@ $_gdm_dialog_width: 23em;
 
 // buttons
 .login-dialog-button {
-  @extend .button;
 
   &.cancel-button,
   &.switch-user-button,
   &.login-dialog-session-list-button {
     @extend .icon-button;
+    @extend %system_button;
+    @if $variant == 'light' {background-color: transparentize($_gdm_fg, .9); &:hover, &:active { background-color: transparentize($_gdm_fg, .8); }}
   }
 
   &.cancel-button {
@@ -145,7 +146,9 @@ $_gdm_dialog_width: 23em;
   width: 26em;
 }
 
-.login-dialog-prompt-entry {}
+.login-dialog-prompt-entry {
+  @extend %system_entry;
+}
 
 
 /* Screen Shield */
@@ -256,6 +259,7 @@ $_gdm_dialog_width: 23em;
         width: $base_icon_size*3;
         height:  $base_icon_size*3;
         background-color: transparentize($_gdm_fg, 0.9);
+        @if $variant == 'light' { color: $_gdm_fg; }
       }
     }
   }
@@ -277,6 +281,7 @@ $_gdm_dialog_width: 23em;
         padding: 32px;
         icon-size: $base_icon_size*4;
         background-color: transparentize($_gdm_fg, 0.9);
+        @if $variant == 'light' { color: $_gdm_fg; }
       }
     }
   }
