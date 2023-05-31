@@ -5,7 +5,7 @@ $slider_size: 16px;
 .slider {
   // slider trough
   -barlevel-height: 4px;
-  -barlevel-background-color: if($variant == 'light', transparentize($fg_color, 0.6), transparentize($fg_color, 0.8)); //background of the trough
+  -barlevel-background-color: transparentize($fg_color, 0.8); //background of the trough
   -barlevel-border-width: 2px; 
   -barlevel-border-color: transparent; // trough border color
   // fill style
@@ -18,7 +18,7 @@ $slider_size: 16px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
   -slider-handle-border-width: 1px;
-  -slider-handle-border-color: $borders_color;
+  -slider-handle-border-color: $borders_color; //transparent; // because 0 width
   color: white;
-  height: $slider_size +1px;
+  height: $slider_size +1.5px;
 }

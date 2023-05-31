@@ -18,27 +18,35 @@ $app_icon_size: 96px;
 
 // Icon tiles in the app grid
 .app-well-app {
-  @include overview_icon($osd_fg_color);
+  @include overview_icon($system_fg_color);
 
-  .overview-icon { padding: $base_padding*2;}  
+  .overview-icon {
+    padding: $base_padding*2;
+    border-radius: $base_border_radius*3;
+    color: $system_fg_color;
+  }
   .overview-icon.overview-icon-with-label {
     > StBoxLayout {
       spacing: $base_padding;
     }
-  }  
-  @if $variant == 'light' { .overview-icon { color: $osd_fg_color;} }
+  }
 }
 
 // app folders
 .app-well-app.app-folder {
-    @include overview_icon($osd_fg_color, $flat: false);
+  @include overview_icon($system_fg_color, $flat: false);
 }
 
 // expanded folder
 .app-folder-dialog {
-  border-radius: $modal_radius*2;
-  background-color: $dash_background_color;
-    
+  border-radius: $modal_radius*4;
+  background-color: $bg_color;
+  padding: $base_padding*2;
+  box-shadow:inset 0 0 0 1px $outer_borders_color;
+
+  @if $is_highcontrast {
+    box-shadow:inset 0 0 0 2px $hc_inset_color;
+  }
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -49,10 +57,12 @@ $app_icon_size: 96px;
       @extend %title_1;
     }
 
-    & .folder-name-entry { width: 300px }
+    & .folder-name-entry {
+      width: 12em;
+    }
 
     /* FIXME: this is to keep the label in sync with the entry */
-    & .folder-name-label { padding: 5px 7px; color: $osd_fg_color; }
+    & .folder-name-label { padding: 5px 7px; color: $system_fg_color; }
 
     & .edit-folder-button {
       @extend %button;
@@ -60,7 +70,7 @@ $app_icon_size: 96px;
       width: 36px;
       height: 36px;
       border-radius: 99px;
-      & > StIcon { icon-size: $base_icon_size }
+      & > StIcon { icon-size: $base_icon_size; }
     }
   }
 
@@ -77,49 +87,61 @@ $app_icon_size: 96px;
     margin-bottom: 18px;
   }
   
-  @if $variant == 'light' {  
-  & .app-well-app {
-  @include overview_icon(transparentize(black, .05));
-
-  .overview-icon { color: $fg_color; padding: $base_padding*2;}
-  .overview-icon.overview-icon-with-label {
-    > StBoxLayout {
-      spacing: $base_padding;
-      }
-    }
-  }
-
-  & .folder-name-container { 
-    & .folder-name-label { padding: 5px 7px; color: $fg_color; }
-    }
-
-  & .page-indicators {
-    margin-bottom: 18px;
-    .page-indicator-icon {
-    background-color: $bubble_buttons_color;
-    }
-  }
+  @if $variant == 'light' {
   
-  & .app-well-app-running-dot {
-  background-color: $fg_color;
-  }
+  	& .app-well-app {
+	  @include overview_icon($system_bg_color);
+
+ 	 .overview-icon {
+	    padding: $base_padding*2;
+	    border-radius: $base_border_radius*3;
+	    color: $fg_color;
+	  }
+	  .overview-icon.overview-icon-with-label {
+	    > StBoxLayout {
+	      spacing: $base_padding;
+	    }
+	  }
+	}
+
+ 	 & .folder-name-container {
+ 	   & .folder-name-entry { @extend %lentry; }
+ 	   & .folder-name-label { padding: 5px 7px; color: $fg_color; } 	   
+ 	   }
   
-  & .page-navigation-arrow {
-  &  > StIcon {
-    margin: 6px;
-    padding: 18px;
-    width: 24px;
-    height: 24px;
-    border-radius: 99px;
-    color: $fg_color;
-  }
+	  & .page-indicators {
+	    .page-indicator-icon {
+	    width: 10px;
+	    height: 10px;
+ 	   border-radius: 10px; // the same as height&width
+ 	   background-color: mix($fg_color, $bg_color, $button_mix_factor);
+ 	 }
+  	}
+  	
+  	& .page-navigation-arrow {
+  	margin: 6px;
+  	padding: 18px;
+  	width: 24px;
+ 	 height: 24px;
+  	border-radius: 99px;
 
-  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  }
+ 	 > StIcon { color: $fg_color;}
 
-  }//eol  
+ 	 @if $is_highcontrast {
+ 	   @include button(normal, $system_fg_color, transparentize($system_bg_color, 0.5));
+ 	 }
+
+  	&:insensitive { @include button(undecorated, $system_fg_color, transparentize($system_bg_color, 0.5));> StIcon 	{ color: $system_fg_color;}}
+  	&:hover { @include button(hover, $system_fg_color, transparentize($system_bg_color, 0.5));> StIcon { color: $system_fg_color;}}
+  	&:active { @include button(active, $system_fg_color, transparentize($system_bg_color, 0.5));> StIcon { color: $system_fg_color;}}
+  	  }
+  	
+  	& .app-well-app-running-dot {
+	  background-color: $fg_color;
+	}
+  	  
+}
+  
 }
 
 .app-folder-dialog-container {
@@ -134,7 +156,7 @@ $app_icon_size: 96px;
   width: 5px;
   border-radius:5px;
   margin-bottom: 8px;
-  background-color: $osd_fg_color;
+  background-color: $system_fg_color;
 }
 
 // Rename popup for app folders
@@ -155,6 +177,7 @@ $app_icon_size: 96px;
     height: 10px;
     border-radius: 10px; // the same as height&width
     background-color: white;
+    transition-duration: 400ms;
   }
 }
 
@@ -164,10 +187,13 @@ $app_icon_size: 96px;
 
 // shutdown and other actions in the grid
 .system-action-icon {
-  background-color: rgba(0,0,0,0.8);
-  color: #fff;
+  background-color: transparentize($system_fg_color,.9);
+  color: $system_fg_color;
   border-radius: 99px;
   icon-size: $app_icon_size * 0.5;
+  @if $is_highcontrast {
+    box-shadow: inset 0 0 0 2px $hc_inset_color;
+  }
 }
 
 .page-navigation-hint {
@@ -193,21 +219,26 @@ $app_icon_size: 96px;
 }
 
 .page-navigation-arrow {
-  &  > StIcon {
-    margin: 6px;
-    padding: 18px;
-    width: 24px;
-    height: 24px;
-    border-radius: 99px;
-    color: $osd_fg_color;
+  margin: 6px;
+  padding: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 99px;
+  transition-duration: 100ms;
+
+  > StIcon { color: $system_fg_color;}
+
+  @if $is_highcontrast {
+    @include button(normal, $system_fg_color, transparentize($system_bg_color, 0.5));
   }
 
-  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:insensitive { @include button(undecorated, $system_fg_color, transparentize($system_bg_color, 0.5));}
+  &:hover { @include button(hover, $system_fg_color, transparentize($system_bg_color, 0.5));}
+  &:active { @include button(active, $system_fg_color, transparentize($system_bg_color, 0.5));}
+  
   @if $variant == 'light' {
-    &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_fg_color, 0.9));}
-    &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_fg_color, 0.9));}
-    &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_fg_color, 0.9));}
+  &:insensitive { @include button(undecorated, $system_fg_color, transparentize($system_fg_color, 0.9));}
+  &:hover { @include button(hover, $system_fg_color, transparentize($system_fg_color, 0.9));}
+  &:active { @include button(active, $system_fg_color, transparentize($system_fg_color, 0.9));}
   }
 }
