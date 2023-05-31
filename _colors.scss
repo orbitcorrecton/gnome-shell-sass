@@ -43,7 +43,7 @@ $shadow_color: if($variant == 'light', rgba(0,0,0,.05), rgba(0,0,0,0.2));
 $button_mix_factor: if($variant == 'light', 12%, 9%);
 
 // notifications
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 5%));
+$bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
 
 // color definitions for system elements (e.g. the overview)
 $system_base_color: $_dark_base_color; // always dark
