@@ -90,7 +90,7 @@ $app_icon_size: 96px;
   @if $variant == 'light' {
   
   	& .app-well-app {
-	  @include overview_icon($system_bg_color);
+	  @include overview_icon(transparentize($system_bg_color, .05));
 
  	 .overview-icon {
 	    padding: $base_padding*2;
