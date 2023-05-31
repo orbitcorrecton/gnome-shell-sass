@@ -43,7 +43,7 @@ $card_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color
 $card_outer_borders_color: transparentize($fg_color, 0.98);
 
 // notifications
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 10%));
+$bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 10%));
 
 // overview background color
 $system_bg_color: $base_color;
