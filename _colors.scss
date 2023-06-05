@@ -43,7 +43,7 @@ $shadow_color: if($variant == 'light', rgba(0,0,0,.05), rgba(0,0,0,0.2));
 $button_mix_factor: if($variant == 'light', 12%, 9%);
 
 // notifications
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 5%));
+$bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
 
 // color definitions for system elements (e.g. the overview)
 $system_base_color: $_dark_base_color; // always dark
@@ -62,13 +62,13 @@ $insensitive_bg_color: mix($bg_color, $base_color, 60%);
 $insensitive_borders_color: mix($borders_color, $base_color, 60%);
 
 // checked state
-$checked_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 7%));
+$checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_color, 7%));
 $checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
 
 // hover state
-$hover_bg_color: if($variant=='light', darken($bg_color,7%), lighten($bg_color, 10%));
+$hover_bg_color: if($variant=='light', darken($bg_color,9%), lighten($bg_color, 10%));
 $hover_fg_color: if($variant=='light', darken($fg_color,9%), lighten($fg_color, 10%));
 
 // active state
-$active_bg_color: if($variant=='light', darken($bg_color, 9%), lighten($bg_color, 12%));
+$active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 12%));
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
