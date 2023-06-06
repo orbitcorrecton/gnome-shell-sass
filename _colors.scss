@@ -15,7 +15,7 @@ $selected_fg_color: #fff;
 $selected_bg_color: #3584e4;
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
 
-$borders_color: if($variant == 'light', transparentize($fg_color, .65), transparentize($fg_color, .9));
+$borders_color: if($variant == 'light', transparentize($fg_color, .85), transparentize($fg_color, .9));
 $borders_edge: if($variant == 'light', rgba(255,255,255,0.8), lighten($bg_color, 5%));
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
@@ -67,21 +67,9 @@ $checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_colo
 $checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
 
 // derived hover colors
-$hover_bg_color: if($variant=='light', darken($bg_color, 3%), lighten($bg_color, 10%));
-$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 10%));
+$hover_bg_color: if($variant=='light', darken($bg_color, 9%), lighten($bg_color, 10%));
+$hover_fg_color: if($variant=='light', darken($fg_color, 9%), lighten($fg_color, 10%));
 
 // derived active colors
-$active_bg_color: if($variant=='light', darken($bg_color, 5%), lighten($bg_color, 12%));
-$active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));
-
-// checked state
-$checked_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 7%));
-$checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
-
-// hover state
-$hover_bg_color: if($variant=='light', darken($bg_color,7%), lighten($bg_color, 10%));
-$hover_fg_color: if($variant=='light', darken($fg_color,9%), lighten($fg_color, 10%));
-
-// active state
-$active_bg_color: if($variant=='light', darken($bg_color, 9%), lighten($bg_color, 12%));
+$active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 12%));
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
