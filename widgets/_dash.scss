@@ -61,7 +61,7 @@ $dash_border_radius: $modal_radius + $dash_padding;
 .dash-separator {
   width: 1px;
   margin: 0 $base_margin;
-  background-color: if($variant == 'light', white, $borders_color);
+  background-color: if($variant == 'light', transparentize(white, .5), $borders_color);
   margin-bottom: $dash_padding;
 }
 
