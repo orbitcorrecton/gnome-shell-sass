@@ -1,7 +1,7 @@
 /* Top Bar */
 // a.k.a. the panel
 
-$panel_bg_color: if($variant == 'light', lighten($light_3, 6%), $dark_5);
+$panel_bg_color: if($variant == 'light', $light_3, $dark_5);
 $panel_fg_color: if($variant == 'light', $fg_color, darken($fg_color, 5%));
 $panel_height: 2.2em;
 $panel_transition_duration: 250ms; // same as the overview transition duration
